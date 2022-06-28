@@ -4,7 +4,7 @@ This repo contains the annotated data and photo metadata from Susan Washko's dis
 
 ### Project question
 
-Can a machine learning (ML) model be devised that can accurately determine rock pool water levels going forward? Some challenges include camera locations that vary slightly, shadows, reflections, and nighttime images.
+Can a machine learning (ML) model be devised that can accurately determine rock pool water levels going forward? Some challenges include camera angles that vary somewhat, shadows, reflections, and nighttime images.
 
 ### Potential applications
 

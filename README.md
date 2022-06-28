@@ -1,4 +1,4 @@
-## Rock pool water levels at Organ Pipe Nat'l Monument
+## Rock pool water levels at [Organ Pipe Nat'l Monument](https://www.nps.gov/orpi/index.htm)
 
 This repo contains the annotated data and photo metadata from Susan Washko's dissertation. For each rock pool, Susan indicated the water level (0, 1, 2, or 3) based on a game camera that was motion-activated at least once per day ($3 \leq n \leq 66$). Original photos are available upon request.
 

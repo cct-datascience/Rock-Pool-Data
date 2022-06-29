@@ -4,21 +4,27 @@
 library(here)
 library(exiftoolr)
 library(dplyr)
-install_exiftool() 
+# install_exiftool() 
 library(readxl)
+library(lubridate)
 
 
-# Read in annotations
+# Read in annotations, change to Date format with correct tz
 levels <- readxl::read_xlsx(here("data_raw", "AlamoNorth_WaterLevels.xlsx")) %>%
-  mutate(date = as.Date(Date, tz = "America/Phoenix"))
+  mutate(Date = force_tz(Date, tzone = "America/Phoenix")) %>%
+  mutate(date = as.Date(Date, tz = "America/Phoenix")) %>%
+  select(date, WaterLevel)
 
 # List all photo files and extract metadata
 all <- list.files(here("AlamoNorth_Photos"))
-output <- c()
+
+# For loop method (somewhat slow)
+output <- data.frame(matrix(NA, nrow = length(all), ncol = 85))
 for(i in 1:length(all)) {
   info <- exif_read(paste0("AlamoNorth_Photos/", all[i]))
-  output <- rbind(output, info)
+  output[i,] <- info
 }
+colnames(output) <- colnames(info)
 
 # Select or create relevant columns, join with annotations
 out2 <- output %>%

@@ -38,7 +38,6 @@ mb_daily <- mb %>%
             RH_mean = mean(RH_mean),
             WS_mean = mean(WS_mph_Avg),
             ppt_tot = sum(Rain_in_Tot),
-            pTemp_mean = mean(PTemp_C_Avg),
             solarRad_mean = mean(Solar_kwm2_Avg))
 
 
@@ -51,7 +50,6 @@ ac_daily <- ac %>%
             RH_mean = mean(RH_mean),
             WS_mean = mean(WS_mph_Avg),
             ppt_tot = sum(Rain_in_Tot),
-            pTemp_mean = mean(PTemp_C_Avg),
             solarRad_mean = mean(Solar_kwm2_Avg))
   
 ##### Save out #####
